@@ -6,7 +6,7 @@ e {
     stages {
         stage('CLONE SCM) {
             steps {
-                echo 'cloning WI-app project code'
+                echo 'cloning my first project project code'
 			git branch: 'main', url: 'https://github.com/bondapalliuma/awsdevops.git'
             }
 			
@@ -20,7 +20,7 @@ e {
 	     stage('DEPLOY TO TOMCAT') {
             steps {
                 echo 'Deploying artifact to tomcat webserver'
-			deploy adapters: [tomcat9(credentialsId: 'wiapp', path: '', url: 'http://54.91.58.6:8080/')], contextPath: null, war: '**/*.war'				
+			deploy adapters: [tomcat9(credentialsId: 'my first project', path: '', url: 'http://54.91.58.6:8080/')], contextPath: null, war: '**/*.war'				
        }
 
 	}   
